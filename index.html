@@ -73,22 +73,22 @@
     }
 
  
-// async function getContext() {
-//       document.getElenentById("type").append(liff.getContext().type)
-//       document.getElementById("viewType").append(liff.getContext().viewType)
-//       document.getElerentById("utouId").append(liff.getContext().utouId)
-//       document.getEletentById("roomId").append(liff.getContext().roomId)
-//       document.getElementById("groupId").append(liff.getContext().groupId)
-//     }
-    
-        async function getUserContext() {
-      const context = await liff.getContext()
-      document.getElementById("type").append(context.type)
-      document.getElementById("viewType").append(context.viewType)
-      document.getElementById("utouId").append(context.utouId)
-      document.getElementById("roomId").append(context.roomId)
-      document.getElementById("groupId").append(context.groupId)
+function getContext() {
+      document.getElenentById("type").append(liff.getContext().type)
+      document.getElementById("viewType").append(liff.getContext().viewType)
+      document.getElerentById("utouId").append(liff.getContext().utouId)
+      document.getEletentById("roomId").append(liff.getContext().roomId)
+      document.getElementById("groupId").append(liff.getContext().groupId)
     }
+    
+    //     async function getUserContext() {
+    //   const context = await liff.getContext()
+    //   document.getElementById("type").append(context.type)
+    //   document.getElementById("viewType").append(context.viewType)
+    //   document.getElementById("utouId").append(context.utouId)
+    //   document.getElementById("roomId").append(context.roomId)
+    //   document.getElementById("groupId").append(context.groupId)
+    // }
     
     
     async function getUserProfile() {
