@@ -46,36 +46,52 @@
     console.log("Hello World!")
   </script> -->
 
-    <script src="https://static.line-scdn.net/liff/edge/versions/2.21.0/sdk.js"></script>
-    <script>
-      function createUniversalLink() {}
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+    function createUniversalLink() {
+    }
 
-      async function shareMsg() {}
+    async function shareMsg() {
+    }
 
-      function logOut() {}
+    function logOut() {
+    }
 
-      function closed() {}
+    function closed() {
+    }
 
-      async function scanCode() {}
+    async function scanCode() {
+    }
 
-      function openWindow() {}
+    function openWindow() {
+    }
 
-      async function getFriendship() {}
+    async function getFriendship() {
+    }
 
-      async function sendMsg() {}
+    async function sendMsg() {
+    }
 
-      function getContext() {}
-
-      // async function getUserProfile() {
-      //   const profile = await liff.getProfile()
-      // document.getElementById("pictureUrl").src = profile.pictureUrl
-      // document.getElementById("userId").append(profile.userId)
-      // document.getElementById("statusMessage").append(profile.statusMessage)
-      // document.getElementById("displayName").append(profile.displayName)
-      // // document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
-      // }
-
-        async function getUserProfile() {
+ 
+// async function getContext() {
+//       document.getElenentById("type").append(liff.getContext().type)
+//       document.getElementById("viewType").append(liff.getContext().viewType)
+//       document.getElerentById("utouId").append(liff.getContext().utouId)
+//       document.getEletentById("roomId").append(liff.getContext().roomId)
+//       document.getElementById("groupId").append(liff.getContext().groupId)
+//     }
+    
+        async function getUserContext() {
+      const context = await liff.getContext()
+      document.getElementById("type").append(context.type)
+      document.getElementById("viewType").append(context.viewType)
+      document.getElementById("utouId").append(context.utouId)
+      document.getElementById("roomId").append(context.roomId)
+      document.getElementById("groupId").append(context.groupId)
+    }
+    
+    
+    async function getUserProfile() {
       const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
@@ -85,34 +101,30 @@
            
     } 
 
-  function getEnvironment() {
-        document.getElementById("os").append(liff.getOS());
-        document.getElementById("language").append(liff.getLanguage());
-        document.getElementById("version").append(liff.getVersion());
-        document.getElementById("accessToken").append(liff.getAccessToken());
-        document.getElementById("isInClient").append(liff.getisInClient());
-
-        if (liff.isInClient()) {
-          document.getElementById("btnLogOut").style.display = "none";
-        } else {
-          document.getElementById("btnMsg").style.display = "none";
-          document.getElementById("btnScanCode").style.display = "none";
-          document.getElementById("btnClose").style.display = "none";
-        }
+    function getEnvironment() {
+   
+      document.getElementById("version").append(liff.getVersion())
+      document.getElementById("os").append(liff.getOS())
+      document.getElementById("language").append(liff.getLanguage())
+      document.getElementById("accessToken").append(liff.getAccessToken())
+      document.getElementById("isInClient").append(liff.isInClient())
+      if (liff.isInClient()){
+        document.getElementById("btnLogOut").style.display = "none"      
+      }else{
+        document.getElementById("btnMsg").style.display = "none"
+        document.getElementById("btnScanCode").style.display = "none"
+        document.getElementById("btnClose").style.display= "none"
       }
-
-      async function main() {
-        // alert("LINE Dev By PONG KKR");
-        await liff.init({
-          liffId: "2000552734-obaXPz9b",
-        });
-        getEnvironment();
-        getUserProfile()
-        // getContext()
-        // getFriendship()
-        // createUniversalLink()
-      }
-      main();
-    </script>
+    }
+    async function main() {
+          await liff.init({ liffId: "1661289399-kV6E6LMn" })
+      getEnvironment()
+      getUserProfile()
+      getContext()
+      // getFriendship()
+      // createUniversalLink()
+    }
+    main()
+  </script>
   </body>
 </html>
