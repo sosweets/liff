@@ -140,13 +140,28 @@
     }
     async function main() {
           await liff.init({ liffId: "2000555087-E6x9lb2e" })
-      getEnvironment()
-      getUserProfile()
-      getContext()
-      getFriendship()
-      // createUniversalLink()
-    }
+    liff.ready.then(() => {
+        document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+        if (liff.isLoggedIn()) {
+          getEnvironment()
+          getUserProfile()
+          getContext()
+          getFriendship()
+          createUniversalLink()
+        } else {
+          liff.login()
+        }
+      })
     main()
+    // async function main() {
+    //       await liff.init({ liffId: "2000555087-E6x9lb2e" })
+    //   getEnvironment()
+    //   getUserProfile()
+    //   getContext()
+    //   getFriendship()
+    //   // createUniversalLink()
+    // }
+    // main()
   </script>
   </body>
 </html>
