@@ -109,10 +109,6 @@
       }
     }
 
-    
-
-    
-    
     async function getUserProfile() {
       const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
@@ -138,9 +134,9 @@
         document.getElementById("btnClose").style.display= "none"
       }
     }
-    async function main() {
-          await liff.init({ liffId: "2000555087-E6x9lb2e" })
-    liff.ready.then(() => {
+
+      async function main() {
+      liff.ready.then(() => {
         document.getElementById("isLoggedIn").append(liff.isLoggedIn())
         if (liff.isLoggedIn()) {
           getEnvironment()
@@ -152,6 +148,8 @@
           liff.login()
         }
       })
+      await liff.init({ liffId: "2000555087-E6x9lb2e" })
+    }
     main()
     // async function main() {
     //       await liff.init({ liffId: "2000555087-E6x9lb2e" })
