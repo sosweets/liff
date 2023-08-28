@@ -66,14 +66,24 @@
 
       function getContext() {}
 
-      async function getUserProfile() {
-        const profile = await liff.getProfile()
+      // async function getUserProfile() {
+      //   const profile = await liff.getProfile()
+      // document.getElementById("pictureUrl").src = profile.pictureUrl
+      // document.getElementById("userId").append(profile.userId)
+      // document.getElementById("statusMessage").append(profile.statusMessage)
+      // document.getElementById("displayName").append(profile.displayName)
+      // // document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+      // }
+
+        async function getUserProfile() {
+      const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
-      document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
-      // document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
-      }
+      document.getElementById("statusMessage").append(profile.statusMessage)
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+           
+    } 
 
   function getEnvironment() {
         document.getElementById("os").append(liff.getOS());
