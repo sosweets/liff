@@ -57,11 +57,9 @@
     function logOut() {
     }
 
-    function closed() {
+   function closed() {
+      liff.closeWindow()
     }
-
-    // async function scanCode() {
-    // }
 
        async function scanCode() {
       const result = await liff.scanCode()
@@ -75,8 +73,6 @@
       })
     }
 
-    // async function getFriendship() {
-    // }
 
         async function getFriendship() {
       const friend = await liff.getFriendship()
@@ -88,8 +84,7 @@
       }
     }
 
-    // async function sendMsg() {
-    // }
+
  async function sendMsg() {
       if (liff.getContext().type !== "none") {
         await liff.sendMessages([
@@ -103,13 +98,7 @@
       }
     }
  
-// function getContext() {
-//       document.getElenentById("type").append(liff.getContext().type)
-//       document.getElementById("viewType").append(liff.getContext().viewType)
-//       document.getElerentById("utouId").append(liff.getContext().utouId)
-//       document.getEletentById("roomId").append(liff.getContext().roomId)
-//       document.getElementById("groupId").append(liff.getContext().groupId)
-//     }
+
   function getContext() {
       if (liff.getContext() != null) {
         document.getElementById("type").append(liff.getContext().type)
@@ -121,14 +110,7 @@
     }
 
     
-    //     async function getUserContext() {
-    //   const context = await liff.getContext()
-    //   document.getElementById("type").append(context.type)
-    //   document.getElementById("viewType").append(context.viewType)
-    //   document.getElementById("utouId").append(context.utouId)
-    //   document.getElementById("roomId").append(context.roomId)
-    //   document.getElementById("groupId").append(context.groupId)
-    // }
+
     
     
     async function getUserProfile() {
