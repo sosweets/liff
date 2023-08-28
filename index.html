@@ -81,14 +81,14 @@ function getContext() {
       document.getElementById("groupId").append(liff.getContext().groupId)
     }
     
-    //     async function getUserContext() {
-    //   const context = await liff.getContext()
-    //   document.getElementById("type").append(context.type)
-    //   document.getElementById("viewType").append(context.viewType)
-    //   document.getElementById("utouId").append(context.utouId)
-    //   document.getElementById("roomId").append(context.roomId)
-    //   document.getElementById("groupId").append(context.groupId)
-    // }
+        async function getUserContext() {
+      const context = await liff.getContext()
+      document.getElementById("type").append(context.type)
+      document.getElementById("viewType").append(context.viewType)
+      document.getElementById("utouId").append(context.utouId)
+      document.getElementById("roomId").append(context.roomId)
+      document.getElementById("groupId").append(context.groupId)
+    }
     
     
     async function getUserProfile() {
